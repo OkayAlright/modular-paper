@@ -1,0 +1,51 @@
+#The Joy Of Coding
+
+It was once told to me, when I studied music,
+the feeling of conducting an ensamble. The
+adrenaline rush when, with the flick of a wrist
+brass bellows, strings hum, drums crash, and
+woodwinds whistle. All on time. All in harmony.
+
+When writing a program, there can be what feels
+like an eternity of fixing, tuning, and rewriting code.
+It is like some old comedy skit where someone plugs
+a hole in a leaky roof to only find two more leaks created
+because of the fix. Sometimes the answer is to just rebuild
+the entire roof. Sometimes you just keep tacking gum to
+the ceiling hoping that it doesn't cave in on you.
+
+After this period of debugging though, there is a moment.
+It can be brief, it can be half founded, and it can lead you
+into a whole new stage of debugging, but it is there.
+It's when something works.
+
+Your debugging tools are running. You just finished a
+new line of code that hopefully stops whatever the hell
+was throwing some system-crashing exception. Yet
+another step in what seems to be a never ending hike
+through stack trace after stack trace, you hit enter and
+you watch your code run.
+
+There is something different this time. No 78-line trace
+of "function this" handed context over to "function that".
+It is just a blank screen. Stress begins to make its presence
+known by the sound of a held breath. It is silent, but just for
+a moment. But finally, there it is: the output you expected.
+
+It could just be some text on the screen; a series of data points;
+rendered images; an active server connection; or some results
+after folding proteins. It doesn't matter. It is there, you wanted it
+to be there, and you figure out how to make the computer put it
+there.
+
+For a brief moment you have hundreds of billions of transistors,
+just nanometers in size, processing bits at a rate between 1 and 3
+billions times a second under your control. You knew how to tell a
+machine that can only subtract by using strange tricks in addition
+how to carry out what could be some of the complex tasks imaginable.
+You computed numbers is mere seconds that, if considered as seconds,
+would span far past your lifetime. It didn't require years of hardened practice
+or many thousands of mathematicians at your disposal. It took a text file
+and a tap of a key. 
+
+
