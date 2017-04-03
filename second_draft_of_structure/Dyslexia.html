@@ -9,6 +9,7 @@
     <script src="js/switch.js"></script>
     <script src="js/text.js"></script>
     <script src="js/shuffle.js"></script>
+    <script src="js/audio.js"></script>
 </head>
 
 <body>
@@ -17,6 +18,8 @@
 
         <script>
         document.getElementById("badfood_gate").insertAdjacentHTML("beforeend",badfood);
+        activate_audio(audio_for_badfood);
+        setSwitches(badfood);
         </script>
     </div>
 </body>

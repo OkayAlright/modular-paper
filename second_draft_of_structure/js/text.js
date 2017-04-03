@@ -1,7 +1,9 @@
-function open_gate(gate_id,template_name){
+function open_gate(gate_id,template_name,audio_name){
      document.getElementById(gate_id).insertAdjacentHTML("beforeend",template_name); //expand text
      document.getElementById(gate_id+"_trigger").onclick = ""; //kill onclick of gate
      document.getElementById("post_"+gate_id).innerHTML = ""; // clear area after new text
+     activate_audio(audio_name);
+     setSwitches(template_name);
 }
 badfood=`<h1>Bad Food:</h1>
     <hr>
@@ -14,7 +16,7 @@ badfood=`<h1>Bad Food:</h1>
         safe. Why did Jake put his wallet in there? <br>
         <span id="badfood_switch1"> Why did I let him put it in there</span>? <br>
         <span id="badfood_switch2"> I just want to go home.</span> <span class="gate" id="seq_gate_from_food_trigger"
-        onclick='open_gate("seq_gate_from_food",sequences);'>Fuck this. <br>
+        onclick='open_gate("seq_gate_from_food",sequences,audio_for_sequences);'>Fuck this. <br>
     </p>
     <p>
         I get that this is supposed to be for Jake and all. <br> 
@@ -40,7 +42,7 @@ badfood=`<h1>Bad Food:</h1>
         Also, why did they drive out of state to shoot fireworks? They <br> 
         are legal here. They BOUGHT them here, why would they not <br> 
         realize it's okay to set them off without <span class="gate" id="busride_gate_from_food_trigger" 
-        onclick='open_gate("busride_gate_from_food",busride);'>driving <br>
+        onclick='open_gate("busride_gate_from_food",busride, audio_for_budride);'>driving <br>
         200 miles north?</span><span id="badfood_switch4"> Why did they leave when I am sick</span>? <br>
     </p>
     <p>
@@ -53,7 +55,7 @@ badfood=`<h1>Bad Food:</h1>
     <p> 
         When are they going to get back? It's 3 in the morn...ugh. <br> 
         <span class="gate" id="goodbye_gate_from_food_trigger" 
-        onclick='open_gate("goodbye_gate_from_food",goodbye);'>I should get up, I think I am going to be sick again.</span> <br>
+        onclick='open_gate("goodbye_gate_from_food",goodbye,blank);'>I should get up, I think I am going to be sick again.</span> <br>
     </p>
     <div id="goodbye_gate_from_food"></div>
     <div id="post_goodbye_gate_from_food">
@@ -75,7 +77,7 @@ goodbye = `<h1>Goodbye:</h1>
 			The longest paper I had ever written prior to Marlboro was about 6 pages . I wrote them once, never proof read <br />			
             them, and I couldn't tell you what a single one was about now. Most of my high school writing was in the <br /> form of
 			single-page short stories that had to use words from a book of insults because our teacher was very <br /> passive aggressive
-			towardsthe course evaluators. <br />
+			towards the course evaluators. <br />
 		</p>
 		<p>
 			I had to write papers about medieval history my first semester. They were terrible. All of them rambled on, were <br />			
@@ -85,7 +87,7 @@ goodbye = `<h1>Goodbye:</h1>
 			There were people to try and help with my time management, but I had no one to go to for my papers (or at least that <br/>
              was how I felt given that I knew how far behind I was). 
             
-            <span class="gate" id="csharp_gate_from_goodbye_trigger" onclick='open_gate("csharp_gate_from_goodbye",csharp);'> 
+            <span class="gate" id="csharp_gate_from_goodbye_trigger" onclick='open_gate("csharp_gate_from_goodbye",csharp,audio_for_csharp);'> 
              It took me a fair deal of time and a huge amount of time and stress to get somewhere 
             </span>
             <br /> with writing. <br />
@@ -94,7 +96,7 @@ goodbye = `<h1>Goodbye:</h1>
 			Anxiety was also a factor. I was surrounded by new people in a place that I felt I could have been kicked out <br /> in
 			a moments notice. 
         
-            <span class="gate" id="python_from_goodbye_trigger" onclick='open_gate("python_from_goodbye",python);'> 
+            <span class="gate" id="python_from_goodbye_trigger" onclick='open_gate("python_from_goodbye",python, audio_for_python);'> 
              I was failing introductory courses 
             </span> while my classmate was getting his second book published. <br />
 		</p>
@@ -114,7 +116,7 @@ goodbye = `<h1>Goodbye:</h1>
 		</p>
 		<p>
 			My mother was mostly right. 
-            <span class="gate" id="grandparents_gate_from_goodbye_trigger" onclick='open_gate("grandparents_gate_from_goodbye",grandparents);'> 
+            <span class="gate" id="grandparents_gate_from_goodbye_trigger" onclick='open_gate("grandparents_gate_from_goodbye",grandparents, audio_for_grandparents);'> 
             It is okay now, but it wasn't for a time. </span> The late nights of responding to Town Meeting <br>
             emails; the stress of possibly losing financial aid; and nights when I missed dinner and had to <br /> 
             write until 5AM on a collapsing stomach were not okay. But this, right now, is. <br />
@@ -147,14 +149,14 @@ busride = `<h1>Bus Ride:</h1>
     </p>
     <p>
     I think the ride would be better if there was someone <br> 
-    else on boredd other than the bus driver. Most kids rides <br> 
+    else on bored other than the bus driver. Most kids rides <br> 
     are an hour long, but at least they have someone to talk to. <br>
     <span id="bus_switch3"> I just have to make friends with the rotating drivers.</span> <br> 
     Why can't I live closer to my friends? <br>
     </p>
     <p>
 
-    <span class="gate" id="seq_gate_from_bus_trigger" onclick='open_gate("seq_gate_from_bus",sequences);'> ... <br>
+    <span class="gate" id="seq_gate_from_bus_trigger" onclick='open_gate("seq_gate_from_bus",sequences,audio_for_sequences);'> ... <br>
     
     </p>
     <p>
@@ -178,7 +180,7 @@ sequences = `<h1>Sequences</h1>
 			<hr>
 			<p>
 			I just want to go to sleep.        
-            <span class="gate" id="sound_from_seq_trigger" onclick='open_gate("sound_from_seq",sound);'> 
+            <span class="gate" id="sound_from_seq_trigger" onclick='open_gate("sound_from_seq",sound,audio_for_sound);'> 
             My head hurts.<br/>
              </span>
 			</p>
@@ -195,18 +197,18 @@ sequences = `<h1>Sequences</h1>
 	 	    night doing</span> this.<br/>
 			</p>
 			<p>
-				<span id="seq_seq_switch3">Who came up with the cursive letter for uppercase "G"s? What<br/>
+				<span id="seq_switch3">Who came up with the cursive letter for uppercase "G"s? What
 	     is wrong with them?</span><br/>
 			</p>
 			<p>
 				Why am I not learning how to read? Why <span id="seq_switch4">am I spending</span> time learning<br/> 
-				an <span class="gate" id="csharp_from_seq_trigger" onclick='open_gate("csharp_from_seq",csharp);'>entirely new and even more confusing </span> <br>                
+				an <span class="gate" id="csharp_from_seq_trigger" onclick='open_gate("csharp_from_seq",csharp, audio_for_csharp);'>entirely new and even more confusing </span> <br>                
                 way to write a language that<br/> 
 				I already struggle with? <span id="seq_switch5">Why are they</span>	doing this?<br/>
 			</p>
              
 			<p>
-				<span class="gate" id="goodbye_gate_from_seq_trigger" onclick='open_gate("goodbye_gate_from_seq",goodbye)'>
+				<span class="gate" id="goodbye_gate_from_seq_trigger" onclick='open_gate("goodbye_gate_from_seq",goodbye,blank)'>
                 <span id="seq_switch6">I want to cry.</span>
                 </span>
             </p>
@@ -229,7 +231,7 @@ grandparents = `<h1>Pops and Grandma:</h1>
 	  I don't think we will ever come back. <br>
 	  </p><p>
 	  <span id="grandparents_switch3"> Now pops and grandma both overlook the Delaware.</span><br>
-      <span class="gate" id="death_gate_from_grandparents_trigger" onclick='open_gate("death_gate_from_grandparents",death)'>
+      <span class="gate" id="death_gate_from_grandparents_trigger" onclick='open_gate("death_gate_from_grandparents",death,blank)'>
       One died as I started school, the other dies as I finish it. </span>
 	  I wonder <br>
 	  what they would say if they were here. They would probably demand <br>
@@ -305,7 +307,7 @@ death = ` <h1>Death:</h1>
             something stupid. I have talked about my death in front <br> 
             of family members, to mixed response. 
             
-            <span class="gate" id="phil_from_death_trigger" onclick='open_gate("phil_from_death",phil)'>
+            <span class="gate" id="phil_from_death_trigger" onclick='open_gate("phil_from_death",phil,blank)'>
             It is because I am <br> too young </span>
             , not because of what I say, which surprises me. <br> 
             What reasonable thing could I say about it? I know <br> 
@@ -365,10 +367,10 @@ csharp = `<h1>C#:</h1>
 	  <p>
 	  I guess it is time to get back to work. <br>
 	  <span id="csharp_switch1"> Mr O. wants me to copy more code </span>. <br>
-      <span class="gate" id="sound_from_csharp_trigger" onclick='open_gate("sound_from_csharp",sound);'> 
+      <span class="gate" id="sound_from_csharp_trigger" onclick='open_gate("sound_from_csharp",sound, audio_for_sound);'> 
       <span id="csharp_switch2"> I want to enjoy this, but I don't <br>
 	  understand what is happening.</span></span> 
-      <span class="gate" id="color_from_csharp_trigger" onclick='open_gate("color_from_csharp",color);'> 
+      <span class="gate" id="color_from_csharp_trigger" onclick='open_gate("color_from_csharp",color,blank);'> 
       I am not sure </span> how <br>
 	  I am supposed to make this into a class <br>
 	  for them to teach, but maybe that is the reason they are <br>
@@ -386,7 +388,7 @@ csharp = `<h1>C#:</h1>
 	  <br>
 	  function Awake() <br>
 	  { <br>
-	      myTransform = transform; //cache transform data for easy access/preformance <br>
+	      myTransform = transform; //cache transform data for easy access/performance <br>
 	  } <br>
 	  <br>
 	  function Start() <br>
@@ -415,7 +417,7 @@ csharp = `<h1>C#:</h1>
 	  <span id="csharp_switch7"> I am really lost now. </span>  <br>
 	  <span id="csharp_switch8"> How does the code know who the playeris? </span><br>
 	   
-      <span class="gate" id="python_from_csharp_trigger" onclick='open_gate("python_from_csharp",python);'> 
+      <span class="gate" id="python_from_csharp_trigger" onclick='open_gate("python_from_csharp",python,audio_for_python);'> 
       How do I study this?
       </span>
 
@@ -437,7 +439,7 @@ python = `<h1>Python:</h1>
        <p>"What the fuck did I get myself into..." </p>
 
        <p>  
-       <span class="gate" id="color_from_python_trigger" onclick='open_gate("color_from_python",color);'> 
+       <span class="gate" id="color_from_python_trigger" onclick='open_gate("color_from_python",color,blank);'> 
          I don't get it.
         </span>
         I am supposed to just write "print" before "Hello, World." But how do I run the program?
@@ -471,7 +473,7 @@ python = `<h1>Python:</h1>
             Hello, world <br>
         </p>
 
-        <span class="gate" id="joy_from_python_trigger" onclick='open_gate("joy_from_python",joy);'> 
+        <span class="gate" id="joy_from_python_trigger" onclick='open_gate("joy_from_python",joy,blank);'> 
         <p id="python_switch_7">Wait, it worked...it actually worked. Let me try it again.</p>
         </span>
          
@@ -500,7 +502,7 @@ joy = ` <h1>Joy:</h1>
     adrenaline rush when, with the flick of a wrist <br>
     brass bellows, strings hum, drums crash, and <br>
     woodwinds whistle.
-    <span class="gate" id="sound_from_joy_trigger" onclick='open_gate("sound_from_joy",sound);'> 
+    <span class="gate" id="sound_from_joy_trigger" onclick='open_gate("sound_from_joy",sound,audio_for_sound);'> 
     All on time. All in harmony. <br>
     </span>
     </p>
@@ -575,13 +577,13 @@ sound = `<h1>Sound:</h1>
 	  <p>
 	  My sister likes music, she also likes the city. <br /> 
 	  I get too flustered by it, though I like skyscrapers. <br /> 
-	  I want to be an <span id="sound_switch_6">architect</span> when I am <br /> 
+	  I want to be an <span id="sound_switch_5">architect</span> when I am <br /> 
 	  older. Buildings make sense, noise doesn't. <br /> 
 	  </p>
 	  <p>
 	  Architecture is a system, there are parts to put together <br /> 
 	  and if they go up in the wrong order, <br /> 
-	  <span id="sound_switch_7">it does't work</span>. Sound can be in <br /> 
+	  <span id="sound_switch_6">it doesn't work</span>. Sound can be in <br /> 
 	  any order you want it to be. A <span id="switch7">car horn</span> <br /> 
 	  here and there, some <span id="sound_switch_8">yelling</span> in the distance <br /> 
 	  sprinkled throughout. Sound doesn't make sense. <br /> 
@@ -664,7 +666,7 @@ color = ` <h1>Color:</h1>
         ability to consistently identify words. It is the process of unveiling <br>
         something that was 
         
-        <span class="gate" id="dreams_from_color_trigger" onclick='open_gate("dreams_from_color",dreams);'> 
+        <span class="gate" id="dreams_from_color_trigger" onclick='open_gate("dreams_from_color",dreams,blank);'> 
         totally out of my grasp 
          </span>
 
@@ -689,7 +691,7 @@ dreams = `<h1> Dreams: </h1>
         <p>
         Most of my dreams are fairly average. 
         
-        <span class="gate" id="dreamsII_from_dreams_trigger" onclick='open_gate("dreamsII_from_dreams",dreamsII);'> 
+        <span class="gate" id="dreamsII_from_dreams_trigger" onclick='open_gate("dreamsII_from_dreams",dreamsII,audio_for_dreams2);'> 
         Not average
         </span>
         
@@ -698,7 +700,7 @@ dreams = `<h1> Dreams: </h1>
         of the last book I read, TV show I watched, and week of my life). Average <br>
         as they play out like an average day. 
         
-         <span class="gate" id="gender_from_dreams_trigger" onclick='open_gate("gender_from_dreams",gender);'> 
+         <span class="gate" id="gender_from_dreams_trigger" onclick='open_gate("gender_from_dreams",gender,blank);'> 
         I wake up in the dream 
          </span>
 
@@ -796,7 +798,7 @@ gender = ` <h1>Gender:</h1>
         </p>
         <p>
 
-        <span class="gate" id="dreamsII_from_gender_trigger" onclick='open_gate("dreamsII_from_gender",dreamsII);'> 
+        <span class="gate" id="dreamsII_from_gender_trigger" onclick='open_gate("dreamsII_from_gender",dreamsII,audio_for_dreams2);'> 
         I never
         </span>
          wallowed in deep depression for weeks or <br>

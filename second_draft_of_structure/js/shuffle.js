@@ -28,49 +28,6 @@ function shuffleWord(word){
 
 setInterval(function(){
     document
-    .getElementById("python_shuffle_1")
-    .innerHTML = shuffleWordsFromText(document.getElementById("python_shuffle_1").innerHTML)
-},500)
-
-setInterval(function(){
-    document
-    .getElementById("python_shuffle_2")
-    .innerHTML = shuffleWordsFromText(document.getElementById("python_shuffle_2").innerHTML)
-},500)
-
-setInterval(function(){
-    document
-    .getElementById("shuffle_csharp")
-    .innerHTML = shuffleWordsFromText(document.getElementById("shuffle_csharp").innerHTML)
-},500)
-
-setInterval(function(){
-    document
-    .getElementById("shuffle_code")
-    .innerHTML = shuffleWordsFromText(document.getElementById("shuffle_code").innerHTML)
-},500)
-
-setInterval(function(){
-    document
-    .getElementById("shuffle_sound")
-    .innerHTML = shuffleWordsFromText(document.getElementById("shuffle_sound").innerHTML)
-},500)
-
-
-setInterval(function(){
-    document
-    .getElementById("shuffle_phil_1")
-    .innerHTML = shuffleWordsFromText(document.getElementById("shuffle_phil_1").innerHTML)
-},500)
-
-setInterval(function(){
-    document
-    .getElementById("shuffle_phil_2")
-    .innerHTML = shuffleWordsFromText(document.getElementById("shuffle_phil_2").innerHTML)
-},500)
-
-setInterval(function(){
-    document
     .getElementById("title")
     .innerHTML = shuffleWordsFromText(document.getElementById("title").innerHTML)
-},500)
+},100)
