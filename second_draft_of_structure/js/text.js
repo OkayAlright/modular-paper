@@ -1,10 +1,38 @@
 function open_gate(gate_id,template_name,audio_name){
      document.getElementById(gate_id).insertAdjacentHTML("beforeend",template_name); //expand text
      document.getElementById(gate_id+"_trigger").onclick = ""; //kill onclick of gate
-     document.getElementById("post_"+gate_id).innerHTML = ""; // clear area after new text
+     //document.getElementById("post_"+gate_id).innerHTML = ""; // clear area after new text
      activate_audio(audio_name);
      setSwitches(template_name);
+     window.scrollTo(0,document.body.scrollHeight);
 }
+eval1 = `<img src="img/strengths.jpg" height="100%" width="100%"></img>
+        <span class="gate" id="seq_gate_from_eval1_trigger" onclick='open_gate("seq_gate_from_eval1",sequences,audio_for_sequences);'>
+        Sequences.
+        </span>
+        <div id="seq_gate_from_eval1"></div>`
+eval2 = `<img src="img/summary1.jpg" height="100%" width="100%">
+         <img src="img/summary2.jpg" height="100%" width="100%">
+         <img src="img/summary3.jpg" height="100%" width="100%">
+         <img src="img/summary4.jpg" height="100%" width="100%">
+         <span class="gate" id="python_from_eval2_trigger" onclick='open_gate("python_from_eval2",python,audio_for_python);'>
+         Python.
+         </span>
+         <div id="python_from_eval2"></div>`
+eval3 = `<img src="img/momsletter.jpg" height="100%" width="100%">
+         <span class="gate" id="seq_gate_from_eval1_trigger" onclick='open_gate("death_gate_from_eval3",death,blank);'>
+         Death.
+         </span>
+         <div id="death_gate_from_eval3"></div>`
+eval4 = `<img src="img/youngeval1.jpg" height="100%" width="100%">
+         <img src="img/youngeval2.jpg" height="100%" width="100%">
+         <img src="img/youngeval3.jpg" height="100%" width="100%">
+         <span class="gate" id="seq_gate_from_eval1_trigger" onclick='open_gate("busride_gate_from_eval4",busride,audio_for_budride);'>
+         Busride.
+         </span>
+         <div id="busride_gate_from_eval4"></div>`
+eval5 = ``
+
 badfood=`<h1>Bad Food:</h1>
     <hr>
     <p>
@@ -27,7 +55,7 @@ badfood=`<h1>Bad Food:</h1>
         Fucking Delaware. <br>
     </p>
     <p>
-        Never once have I heard someone advocating for a visit, <br> 
+        Never once have I heard someone <span class="gate" id="eval4_gate_from_food_trigger" onclick='open_gate("eval4_gate_from_food",eval4,blank);'> advocating </span> for a visit, <br> 
         moving, road trip to, or exodus to Delaware. Why would <br> 
         Jake choose here? Him and Brad both drove up into Pennsylvania <br> 
         tonight because they actually wanted to do something other than <br> 
@@ -49,8 +77,8 @@ badfood=`<h1>Bad Food:</h1>
         I know they popped into Philly to go see some strippers, which <br> 
         would explain the initial venture northward. Though even I <br> 
         could have guessed no strip joint would be open on a Monday. <br> 
-        They also mentioned something about people lying in the <br> 
-        streets. <span id="badfood_switch5"> Did they see a dead guy?</span> <br>
+        They also mentioned something about people  <span class="gate" id="eval1_gate_from_food_trigger" onclick='open_gate("eval1_gate_from_food",eval1,blank);'> lying in the <br> 
+        streets.</span> <span id="badfood_switch5"> Did they see a dead guy?</span> <br>
     </p>
     <p> 
         When are they going to get back? It's 3 in the morn...ugh. <br> 
@@ -58,11 +86,15 @@ badfood=`<h1>Bad Food:</h1>
         onclick='open_gate("goodbye_gate_from_food",goodbye,blank);'>I should get up, I think I am going to be sick again.</span> <br>
     </p>
     <div id="goodbye_gate_from_food"></div>
-    <div id="post_goodbye_gate_from_food">
+    <div id="post_goodbye_gate_from_food"></div>
+    <div id="eval1_gate_from_food"></div>
+    <div id="post_eval1_gate_from_food"></div>
     <div id="busride_gate_from_food"></div>
-    <div id="post_busride_gate_from_food">
+    <div id="post_busride_gate_from_food"></div>
+    <div id="eval4_gate_from_food"></div>
+    <div id="post_eval4_gate_from_food"></div>
     <div id="seq_gate_from_food"></div>
-    <div id="post_seq_gate_from_food">
+    <div id="post_seq_gate_from_food"></div>
     </div>
     </div>
     </div>`
@@ -241,7 +273,7 @@ grandparents = `<h1>Pops and Grandma:</h1>
 	  </p><p>
 	  Actually, I don't know what grandma would say. <br>
 	  <span id="switch5"> I don't have a good memory of her.</span><br>
-	  I have heard enough stories that they are all I really know
+	  <span class="gate" id="eval3_gate_from_grandparents_trigger" onclick='open_gate("eval3_gate_from_grandparents",eval3,blank);'> I have heard enough </span> stories that they are all I really know
 		about her. <br>
 	  All I can clearly recall is her in a red bandana on her head, sitting in <br>
 	  the Old Farms kitchen. She died not too long after that. <br>
@@ -255,8 +287,11 @@ grandparents = `<h1>Pops and Grandma:</h1>
 		together. </span> <br>
 	  I got the chance to know him. <br>
 
+      <div id="eval3_gate_from_grandparents"></div>
+      <div id="post_eval3_gate_from_grandparents">
       <div id="death_gate_from_grandparents"></div>
       <div id="post_death_gate_from_grandparents">
+      
       </div>`
 death = ` <h1>Death:</h1>
         <hr>
@@ -373,8 +408,8 @@ csharp = `<h1>C#:</h1>
       <span class="gate" id="color_from_csharp_trigger" onclick='open_gate("color_from_csharp",color,blank);'> 
       I am not sure </span> how <br>
 	  I am supposed to make this into a class <br>
-	  for them to teach, but maybe that is the reason they are <br>
-	  having me do it:<span id="csharp_switch3"> they don't know how to either</span>. <br>
+	  for them to teach, but maybe <span class="gate" id="eval2_from_csharp_trigger" onclick='open_gate("eval2_from_csharp",eval2,blank);'> that is the reason they are <br>
+	  having me do it</span>:<span id="csharp_switch3"> they don't know how to either</span>. <br>
 	  </p>
 	  <p>
 	  Let me look at the example code: <br>
@@ -425,6 +460,8 @@ csharp = `<h1>C#:</h1>
       <div id="post_python_from_csharp">
       <div id="color_from_csharp"></div>
       <div id="post_color_from_csharp">
+      <div id="eval2_from_csharp"></div>
+      <div id="post_eval2_from_csharp">
       <div id="sound_from_csharp"></div>
       <div id="post_sound_from_csharp">
       </div>
@@ -736,7 +773,7 @@ dreams = `<h1> Dreams: </h1>
         or not wanting to drive welcome company away). Other times they tell me stories I <br>
         have never heard before, I always feel awkward being so personal with a complete <br>
         stranger. Before I know it we are on a bridge with an upward incline. They tell me that <br>
-        it is my stop and I get out. It is always night by this point. I see the city backlighting <br>
+        it is my stop and I get out. It is always night by this point. I see the city back-lighting <br>
         a larger bridge being built to the right of the one I was on. The scene is not terrible <br>
         dissimilar from the current state of the Tappan Zee. <br>
         </p>
