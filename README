@@ -1,0 +1,53 @@
+This repo contains all source code for the *Release* webpage: csmarlboro.org/ldavis
+
+All HTML, JS, CSS, images, and videos for the project can be found here. 
+What is currently the live version is located in the "final draft" sub directory.
+Here is a map of the final draft folder:
+
+final_Draft/
+├── Dyslexia.html
+├── css
+│   ├── custom_landing.css
+│   ├── normalize.css
+│   └── skeleton.css
+├── extras
+│   ├── graph_walk.py
+│   └── paper_graph.jpeg
+├── img
+│   ├── momsletter.jpg
+│   ├── strengths.jpg
+│   ├── summary1.jpg
+│   ├── summary2.jpg
+│   ├── summary3.jpg
+│   ├── summary4.jpg
+│   ├── youngeval1.jpg
+│   ├── youngeval2.jpg
+│   └── youngeval3.jpg
+├── index.html
+├── js
+│   ├── audio.js
+│   ├── shuffle.js
+│   ├── switch.js
+│   └── text.js
+├── sound
+│   ├── Color.m4a
+│   ├── Death.m4a
+│   ├── Dreams.m4a
+│   ├── Goodbye.m4a
+│   ├── Krystal\ Clinical.m4a
+│   ├── Krystal\ Language\ 1.m4a
+│   ├── Krystal\ Language\ 2.m4a
+│   ├── Krystal\ Medical.m4a
+│   ├── Krystal\ Weakness.m4a
+│   ├── Sophie\ -\ Social\ 2.m4a
+│   ├── Sophie\ -\ Strengths.m4a
+│   └── Start.m4a
+└── vid
+    └── IMG_0160.MOV
+
+
+If you have any questions, please feel free to contact me at:
+ - email: ldavis@marlboro.edu
+ - twitter: Death_by_kelp
+
+This README was last updated on 29/4/17
