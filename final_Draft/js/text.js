@@ -1,4 +1,23 @@
+/*
+text.js
+by Logan Davis
+
+Description:
+    A storage for modular memoir text sections.
+    This code is very case specific to best serve 
+    text and audio handling for *Release*
+
+4/29/17 | MIT License
+*/
+
 function open_gate(gate_id,template_name,audio_name){
+    /* inserts a text template based on template_name
+     * at tag with id = gate_id.
+     *
+     * Starts audio object named audio_name.
+     * Also starts switches and shuffles based on
+     * template_name.
+     */
      var prev_height = document.body.scrollHeight;
      window.scrollTo(0,document.body.scrollHeight);
      document.getElementById(gate_id).insertAdjacentHTML("beforeend",template_name); //expand text

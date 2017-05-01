@@ -1,12 +1,9 @@
-iframe {    
-    border:0 none;
-    height: 100%;
-    width: 100%;
-}
+
 .gate{
     text-decoration: underline;
 }
 video { 
+    /* adapted from https://codepen.io/tyrus/pen/twpuK */
     position: fixed;
     min-width: 1080px;
     min-height: 1080px;

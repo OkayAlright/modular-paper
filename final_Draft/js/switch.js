@@ -1,16 +1,40 @@
+/*
+switch.js
+by Logan Davis
 
+Description:
+    Defines specific functions for text switching
+    in *Release* while also handling all switch/shuffle
+    interval setting.
+
+    All choices for the modular text switching are
+    defined here.
+
+4/29/17 | MIT License 
+*/
 
 function chooseFromList(list_of_choices){
+    /* Returns a random item from list_of_choices
+     */
     return list_of_choices[Math.floor(Math.random() * list_of_choices.length)];
 }
 function get_and_switch(list_of_choices,id_tag){
+    /* Given an id_tag and a list of choices,
+     * will randomly choose one item from the 
+     * list and assign it to the content of 
+     * the tagged element.
+     */
     if(Math.random() > 0.9){
         document.getElementById(id_tag).innerHTML = chooseFromList(list_of_choices)
     }
 }
 
-function setSwitches(tag){
-    switch(tag){
+function setSwitches(id){
+    /* Given an id, sets intervals for
+     * switching and shuffling related to the 
+     * piece.
+     */
+    switch(id){
         case badfood:
             setInterval(function(){get_and_switch(badfood_switch1,"badfood_switch1")},500);
             setInterval(function(){get_and_switch(badfood_switch2,"badfood_switch2")},500);
@@ -128,6 +152,8 @@ function setSwitches(tag){
 
     }
 }
+
+/* Lists of Choices for modular text switching */
 
 //BADFOOD
 var badfood_switch1 = [" Why did I let him put it in there"," Why did he close it without checking"]; 
